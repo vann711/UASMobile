@@ -1,0 +1,13 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "IvanHermawan_00000021202_IF733_CL_UAS",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

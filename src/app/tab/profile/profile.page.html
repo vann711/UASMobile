@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+  <div class="ion-padding"> 
+    <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/User_font_awesome.svg/1200px-User_font_awesome.svg.png">
+
+      <ion-card-header class="ion-text-center ion-margin-bottom">
+        <ion-card-title>{{username}}</ion-card-title>
+        <ion-card-subtitle>00000021202</ion-card-subtitle>
+      </ion-card-header>
+
+    <ion-card>
+      <ion-card-content>
+        <p class="ion-padding">My Feeds</p>
+        <ion-list>
+          <ion-item *ngIf="userCheckins.length == 0">
+            <ion-label>No check in found.</ion-label>
+          </ion-item>
+          <ion-item *ngFor="let userCheckin of userCheckins.reverse(); let i = index">
+            <ion-label class="ion-text-wrap">{{username}} {{userCheckin[0]}}<br>
+              <small>{{userCheckin[1] | date :'short'}}</small>
+            </ion-label>
+            <ion-button color="danger" slot="end" (click)="removeCheckin(userCheckins.length - i - 1)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="ion-text-center ion-margin-bottom">
+      <p class="ion-padding">Kesan pesan: Rasanya ahh mantap</p>
+    </ion-card>
+    <ion-button color="danger" style="padding-left: 130px;" (click)="logout()">Logout</ion-button>
+  </div>
+</ion-content>
+
+
